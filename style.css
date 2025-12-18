@@ -38,6 +38,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 body {
@@ -494,11 +499,16 @@ img {
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
   transition: var(--transition);
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.timeline-content:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateX(5px);
+@media (min-width: 769px) {
+  .timeline-content:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateX(5px);
+  }
 }
 
 .timeline-header {
@@ -555,6 +565,8 @@ img {
   color: var(--text-secondary);
   margin-bottom: 10px;
   line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .timeline-highlights li:last-child {
@@ -921,12 +933,18 @@ img {
     flex-direction: column;
   }
 
+  .timeline {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .timeline::before {
     left: 8px;
   }
 
   .timeline-item {
     padding-left: 35px;
+    max-width: 100%;
   }
 
   .timeline-marker {
@@ -937,6 +955,23 @@ img {
 
   .timeline-header {
     flex-direction: column;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .timeline-title {
+    font-size: 1.25rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .timeline-description,
+  .timeline-highlights li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .skills-grid {
@@ -976,12 +1011,36 @@ img {
     font-size: 2rem;
   }
 
+  .timeline {
+    max-width: 100%;
+  }
+
   .timeline-content {
-    padding: 20px;
+    padding: 16px;
+    max-width: 100%;
   }
 
   .timeline-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+    word-wrap: break-word;
+  }
+
+  .timeline-description {
+    font-size: 0.938rem;
+  }
+
+  .timeline-highlights li {
+    font-size: 0.938rem;
+    gap: 8px;
+  }
+
+  .timeline-tags {
+    gap: 6px;
+  }
+
+  .tag {
+    padding: 4px 10px;
+    font-size: 0.75rem;
   }
 
   .contact-item {
