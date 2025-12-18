@@ -559,14 +559,13 @@ img {
 }
 
 .timeline-highlights li {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 16px 1fr;
   gap: 10px;
+  align-items: start;
   color: var(--text-secondary);
   margin-bottom: 10px;
-  line-height: 1.5;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  line-height: 1.6;
 }
 
 .timeline-highlights li:last-child {
@@ -575,8 +574,8 @@ img {
 
 .timeline-highlights i {
   color: var(--primary-color);
-  margin-top: 4px;
-  flex-shrink: 0;
+  margin-top: 5px;
+  font-size: 0.875rem;
 }
 
 .timeline-tags {
